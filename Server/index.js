@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 app.use(cors()); // middelware to accept resource request from diffrent domain. 
 app.use(bodyParser.urlencoded({ extended: true })); // to retrive data from api requests
 app.use(express.json()); // data formatting to json
-await mongoose.connect(process.env.DB_URl); // connection to database
+await mongoose.connect(process.env.DATABSE_URL); // connection to database
 
 // declaring different routes and functions 
 app.post("/new", addnewfn);
