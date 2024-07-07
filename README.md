@@ -16,21 +16,21 @@ Database: MongoDB
 
 # Usage
 
-##Create a new note:
+## Create a new note:
 
 Access the application in your web browser.
 Click on a button designated for creating new notes.
 Enter your note content in the provided text area.
 Click on a "Save" button action to persist the note.
 
-##Edit a note:
+## Edit a note:
 
 Locate the note you want to modify.
 Click on an "Edit" button associated with the note.
 Make your changes to the note content.
 Click on a "Save Changes" button action to update the note.
 
-##Delete a note:
+## Delete a note:
 
 Find the note you want to remove.
 Click on a "Delete" button  associated with the note.
