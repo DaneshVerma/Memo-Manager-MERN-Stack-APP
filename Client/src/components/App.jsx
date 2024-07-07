@@ -6,6 +6,9 @@ import Note from "./Note";
 import CreateArea from "./CreateArea"; // above rest are react components
 import axios from "axios"; // for conneting with the server to communicate
 import { v4 as uuidv4 } from "uuid"; // for assining each note element a unique id
+import dotenv from "dotenv"
+
+dotenv.config()
 
 function App() {
   const [notes, setNotes] = useState([]); // to store notes data retrived from server
@@ -13,7 +16,7 @@ function App() {
 
   useEffect(() => {
     // fetches the existing saved note data from MongoDB server
-    axios.get("http://localhost:3000/data").then((response) => {
+    axios.get(`${process.env.BACKEND_SERVER}/data`).then((response) => {
       setNotes(response.data);
     });
   }, []);
@@ -21,7 +24,7 @@ function App() {
   function addNote(newNote) {
     // this function sends the new note entry to server and fecthes the the data containing new entry
     axios
-      .post("http://localhost:3000/new", {
+      .post(`${process.env.BACKEND_SERVER}/new`, {
         title: newNote.title,
         note: newNote.content,
         noteid: uuidv4(),
@@ -36,7 +39,7 @@ function App() {
   function deleteNote(noteid) {
     // this function sends delete request for seleted note by its id facthes the new data after deletation
     axios
-      .delete("http://localhost:3000/delete", { data: { id: noteid } })
+      .delete(`${process.env.BACKEND_SERVER}/delete`, { data: { id: noteid } })
       .then((response) => {
         setNotes(response.data);
       });
@@ -48,7 +51,7 @@ function App() {
   function updateNote(note) {
     // after editing this function send's an update request to the server with the data to be updated and fecthes new data with updated changes.
     console.log(note);
-    axios.put("http://localhost:3000/update", note).then((response) => {
+    axios.put(`${process.env.BACKEND_SERVER}/update`, note).then((response) => {
       setNotes(response.data);
     });
   } 
