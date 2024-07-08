@@ -93,7 +93,7 @@ function CreateArea(props) {
 
   return (
     <div>
-      <form className="create-note ">
+      <form className="create-note w-[80%] xl:w-[480px]">
       {/* used conditional rendering here to get expansion effect in action full input filed is shown only when expnadState is true */}
         {expandState ? (
           <input
