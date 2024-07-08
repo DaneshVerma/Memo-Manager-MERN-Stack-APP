@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"; // react-hooks
 import AddIcon from "@mui/icons-material/Add";
-import Fab from "@mui/material/Fab";
+import Fab from '@mui/material/Fab';
 import Zoom from "@mui/material/Zoom";
 import EditIcon from "@mui/icons-material/Edit";
 import CloseIcon from "@mui/icons-material/Close"; // from here other components are material UI Icon components from react.
@@ -93,7 +93,7 @@ function CreateArea(props) {
 
   return (
     <div>
-      <form className="create-note">
+      <form className="create-note ">
       {/* used conditional rendering here to get expansion effect in action full input filed is shown only when expnadState is true */}
         {expandState ? (
           <input

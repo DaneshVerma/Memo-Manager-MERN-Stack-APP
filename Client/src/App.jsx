@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
-import AboutNote from "./about.jsx";
-import Note from "./Note.jsx";
-import CreateArea from "./CreateArea.jsx"; // above rest are react components
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import AboutNote from "./components/about.jsx";
+import Note from "./components/Note.jsx";
+import CreateArea from "./components/CreateArea.jsx"; // above rest are react components
 import axios from "axios"; // for conneting with the server to communicate
 import { v4 as uuidv4 } from "uuid"; // for assining each note element a unique id
+import './App.css'
 
-const backendURL = import.meta.env.VITE_BACKEND_SERVER;
-
+const backendURL = "http://localhost:3000"|| import.meta.env.VITE_BACKEND_SERVER;
+console.log(backendURL);
 function App() {
   const [notes, setNotes] = useState([]); // to store notes data retrived from server
   const [noteToEdit, setNotetoEdit] = useState(null); // used to store a specific note for performing updatation or editing on that.
@@ -63,7 +64,7 @@ function App() {
   };
   return (
     // rendering all the required components along with sending required props to each.
-    <div>
+    <div >
       <Header />
       <CreateArea onAdd={addNote} editable={noteToEdit} onUpdate={updateNote} />
       <div className="container">
