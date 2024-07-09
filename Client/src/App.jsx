@@ -8,7 +8,7 @@ import axios from "axios"; // for conneting with the server to communicate
 import { v4 as uuidv4 } from "uuid"; // for assining each note element a unique id
 import './App.css'
 
-const backendURL = "http://localhost:3000"|| import.meta.env.VITE_BACKEND_SERVER;
+const backendURL = "https://memo-manbger-backend-production.up.railway.app"
 console.log(backendURL);
 function App() {
   const [notes, setNotes] = useState([]); // to store notes data retrived from server
