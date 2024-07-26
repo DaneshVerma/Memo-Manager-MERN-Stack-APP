@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     // fetches the existing saved note data from MongoDB server
-    axios.get(`${backendURL}/data`).then((response) => {
+    axios.get(`${backendURL}data`).then((response) => {
       setNotes(response.data);
     });
   }, []);
@@ -23,7 +23,7 @@ function App() {
   function addNote(newNote) {
     // this function sends the new note entry to server and fecthes the the data containing new entry
     axios
-      .post(`${backendURL}/new`, {
+      .post(`${backendURL}new`, {
         title: newNote.title,
         note: newNote.content,
         noteid: uuidv4(),
@@ -38,7 +38,7 @@ function App() {
   function deleteNote(noteid) {
     // this function sends delete request for seleted note by its id facthes the new data after deletation
     axios
-      .delete(`${backendURL}/delete`, { data: { id: noteid } })
+      .delete(`${backendURL}delete`, { data: { id: noteid } })
       .then((response) => {
         setNotes(response.data);
       });
@@ -50,7 +50,7 @@ function App() {
   function updateNote(note) {
     // after editing this function send's an update request to the server with the data to be updated and fecthes new data with updated changes.
     console.log(note);
-    axios.put(`${backendURL}/update`, note).then((response) => {
+    axios.put(`${backendURL}update`, note).then((response) => {
       setNotes(response.data);
     });
   }
