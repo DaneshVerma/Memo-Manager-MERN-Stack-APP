@@ -58,8 +58,8 @@ function App() {
   // this is just a constent variable containing information about me a fellow developer not included it into the other notes in the database so that only this note object can be the immutable one.
   const myAbout = {
     index: "me",
-    title: "About",
-    note: "I'm Danesh one who made this MERN stack based project. the application's Concept is inspired from Google Keep. click at the header of this site to see the source code & click On my name below to contact me.",
+    title: "About Me",
+    note: "Hello I'm Danesh one who made this MERN stack based project. this web application's Concept is inspired from Google Keep. click at the top header (Memo's-Manager) to see the source code in my GitHub & click On my name below in footer to contact me.",
   };
   return (
     // rendering all the required components along with sending required props to each.
