@@ -1,9 +1,8 @@
 // footer component
 function Footer() {
-  const year = new Date().getFullYear();
   return (
     <footer>
-      <div>Made BY <a href="https://github.com/DaneshwarVerma">@Danesh</a> ⓒ {year}</div>
+      <div>Made BY <a href="https://www.instagram.com/thedanesh7/">@Danesh</a></div>
     </footer>
   );
 }
