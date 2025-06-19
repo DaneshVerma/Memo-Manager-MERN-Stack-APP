@@ -9,7 +9,9 @@ dotenv.config();
 const port = 3000;
 
 const corsOptions = {
-  origin: "https://memos-manager.onrender.com/" || "http://localhost:5173", // Allow requests from your frontend's origin
+  origin:  ["https://memos-manager.onrender.com", "http://localhost:5173"],// Allow requests from your frontend's origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
   optionsSuccessStatus: 200, // Some legacy browsers choke on 204
 };
 
