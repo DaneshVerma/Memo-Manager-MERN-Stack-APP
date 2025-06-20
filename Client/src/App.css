@@ -32,11 +32,22 @@ footer {
 }
 
 .container {
-  overflow-y: hidden;
-  min-width: 90vw;
+  column-count: 4; /* Adjust based on screen size */
+  column-gap: 1rem;
+  padding: 1rem;
   min-height: 70vh;
 }
 
+.note {
+  display: inline-block; /* Important for column layout */
+  width: 100%;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  margin-bottom: 1rem;
+  break-inside: avoid; /* Prevent breaking inside a column */
+}
 footer div {
   color: #999797;
 }
@@ -44,15 +55,6 @@ footer div a{
   text-decoration: none;
   font-weight: bold;
   color: #999797;
-}
-.note {
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
-  padding: 10px;
-  max-width: 300px;
-  margin: 16px;
-  float: left;
 }
 .note h1 {
   font-size: 1.1em;
