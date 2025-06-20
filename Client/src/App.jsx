@@ -12,7 +12,7 @@ const backendURL = import.meta.env.VITE_BACKEND_SERVER;
 function App() {
   const [notes, setNotes] = useState([]); // to store notes data retrived from server
   const [noteToEdit, setNotetoEdit] = useState(null); // used to store a specific note for performing updatation or editing on that.
-
+  
   useEffect(() => {
     // fetches the existing saved note data from MongoDB server
     axios.get(`${backendURL}data`).then((response) => {

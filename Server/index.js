@@ -6,7 +6,6 @@ import cors from "cors"; // middelware
 import dotenv from "dotenv";
 const app = express(); // creating express app
 dotenv.config();
-app.options('*', cors(corsOptions));
 
 const port = 3000;
 
@@ -16,7 +15,7 @@ const corsOptions = {
   credentials: true,
   optionsSuccessStatus: 200, // Some legacy browsers choke on 204
 };
-
+app.options('*', cors(corsOptions));
 app.use(cors(corsOptions)); // middelware to accept resource request from diffrent domain.
 app.use(bodyParser.urlencoded({ extended: true })); // to retrive data from api requests
 app.use(express.json()); // data formatting to json
