@@ -6,6 +6,8 @@ import cors from "cors"; // middelware
 import dotenv from "dotenv";
 const app = express(); // creating express app
 dotenv.config();
+app.options('*', cors(corsOptions));
+
 const port = 3000;
 
 const corsOptions = {

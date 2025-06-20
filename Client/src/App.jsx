@@ -61,6 +61,11 @@ function App() {
     title: "About Me",
     note: "Hello I'm Danesh one who made this MERN stack based project. this web application's Concept is inspired from Google Keep. click at the top header (Memo's-Manager) to see the source code in my GitHub & click On my name below in footer to contact me.",
   };
+  const notice = {
+    index: "info",
+    title: "Attention Please",
+    note: "if you may experience that application is not working as like it has to work that is because its forontend & backend both are deployed via using free resources which causes compromization in performance or sometimes delay reponses and server down issue's."
+  }
   return (
     // rendering all the required components along with sending required props to each.
     <div>
@@ -68,6 +73,7 @@ function App() {
       <CreateArea onAdd={addNote} editable={noteToEdit} onUpdate={updateNote} />
       <div className="container">
         <AboutNote title={myAbout.title} content={myAbout.note} />
+        <AboutNote title={notice.title} content={notice.note} />
         {Array.isArray(notes)
           ? notes.map((noteItem, index) => {
               return (
